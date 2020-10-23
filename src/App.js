@@ -1,9 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+import EmailVerificationComponent from "./EmailVerificationComponent";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <EmailVerificationComponent />
+    </div>
+  );
 }
 
 export default App;
