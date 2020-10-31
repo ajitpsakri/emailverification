@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 
 const EmailVerificationComponent = () => {
-  const [inputEmail, setInputEmail] = useState();
+  const [inputEmail, setInputEmail] = useState("");
   const handleChange = (e) => {
     setInputEmail(e.target.value);
   };
-  let key = "RMOAD7L9PEIZMV5ZS2CK";
-  const handleSubmit = () => {
-    fetch(
-      `https://api.mailboxvalidator.com/v1/validation/single?email=${inputEmail}&key=${key}`
-    )
-      .then((resp = resp.json()))
-      .then((data) => console.log(data));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(`/ajit`, {
+      method: "get",
+      mode: "cors",
+      Get: "/users",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
   };
   return (
     <form onSubmit={handleSubmit}>
