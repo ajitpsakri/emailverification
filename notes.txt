@@ -1,0 +1,3 @@
+paste this in incial of url in fetch api
+
+https://cors-anywhere.herokuapp.com/
